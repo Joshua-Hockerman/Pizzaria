@@ -1,4 +1,5 @@
 {% extends "pizzas/base.html" %}
+{% load static %}
 
 {% block content %}
 
@@ -7,6 +8,10 @@
 <h3>
     <p>{{ pizza }}</p>
 </h3>
+
+<br>
+
+<img src="{% static '' %}{{pizza}}.jpg" alt="{{pizza}}" width="400" height="400">
 
 <br>
 
