@@ -15,7 +15,9 @@
 
 <br>
 
-<p>Toppings</p>
+<h4>
+    <p>Toppings</p>
+</h4>
 
 <ul>
     {% for topping in toppings %}
@@ -27,5 +29,8 @@
     {% endfor %}
 </ul>
 
+<br>
+
+<td>Comments: &nbsp <a href="{% url 'pizzas:pizza_comment' pizza.id%}">Leave a comment</a> &nbsp &nbsp</td>
 
 {% endblock content %}

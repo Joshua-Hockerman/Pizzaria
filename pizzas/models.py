@@ -14,7 +14,7 @@ class Pizza(models.Model):
 
 
 class Topping(models.Model):
-    """Thie creates a model to store the toppings to each pizza."""
+    """This creates a model to store the toppings to each pizza."""
 
     pizza = models.ForeignKey(Pizza, on_delete=models.CASCADE)
 
@@ -22,3 +22,21 @@ class Topping(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Comment(models.Model):
+    """This create a model for the comments to go on each pizza page."""
+
+    pizza = models.ForeignKey(Pizza, on_delete=models.CASCADE)
+
+    name = models.CharField(max_length=80)
+
+    body = models.TextField()
+
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["created_on"]
+
+    def __str__(self):
+        return "Comment {} by {}".format(self.body, self.name)

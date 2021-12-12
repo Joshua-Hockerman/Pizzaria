@@ -1,0 +1,35 @@
+{% extends "pizzas/base.html" %}
+
+{% block page_header %}
+<div class="col-md-8 card mb-4 mt-3">
+    <div class="card-body">
+
+        <h2>{{comments.count}} - Comments for {{ pizza }} pizza</h2>
+
+        {% for comment in comments %}
+        <div class="comments" style="padding: 10px;">
+            <p class="front-weight-bold">
+                {{comment.name}}
+                <span class=" text-muted font-weight-normal">
+                    {{comment.created_on}}
+                </span>
+            </p>
+            {{comment.body | linebreaks}}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="col-md-8 mb-4 mt-3">
+    <div class="card-body">
+        <h3>Leave a comment</h3>
+        <form method="post" style="margin-top: 1.3am;">
+            {{ comment_form.as_p }}
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+        </form>
+    </div>
+</div>
+
+
+{% endblock page_header %}
