@@ -2,16 +2,65 @@
 
 {% block page_header %}
 
-<br><br>
+<br>
 
+<style>
+    body {
+        background-image: url('static/italy_map.jpg'), url('static/leaning_tower.jpg'), url('static/Pizza_Oven.jpg');
+        background-repeat: no-repeat, no-repeat, no-repeat;
+        background-attachment: fixed, fixed, fixed;
+        background-position-x: left, center, right;
+        background-size: 33% 100%, 33% 100%, 33% 100%;
+    }
+</style>
 
-<h1>
-    <p>Welcome to Best Pizza!</p>
+<head>
+    <title> Title alignement </title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<style>
+    h1 {
+        text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 3px 3px 0 #000;
+    }
+</style>
+
+<h1 style="font-size:8vw">
+    <p style="color:antiquewhite">Welcome to Best Pizza!</p>
 </h1>
 
-<br><br>
+<br>
 
-<p>Click below to access our wonderful menu.</p>
+<head>
+    <title> Title alignement </title>
+    <style>
+        h4 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<style>
+    h4 {
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    }
+</style>
+
+<h4 style="font-size: 2vw;">
+    <p style="color: antiquewhite;">Click above to access our wonderful menu.</p>
+</h4>
+
+<head>
+    <title> Title alignement </title>
+    <style>
+        p {
+            text-align: center;
+        }
+    </style>
+</head>
 
 
 {% endblock page_header %}

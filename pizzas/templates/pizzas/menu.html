@@ -2,19 +2,38 @@
 
 {% block content %}
 
-<h2>
-    <p>Menu</p>
+
+<style>
+    body {
+        background-image: url('static/italian_flag.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+</style>
+
+<h2 style="font-size:6vw">
+    Menu
 </h2>
 
 <ul>
     {% for item in items %}
-    <li>
+    <li style="font-size:2vw">
         <a href="{% url 'pizzas:toppings' item.id %}">{{item}}</a>
     </li>
     {% empty %}
     <li>No entries in the menu!</li>
     {% endfor %}
 </ul>
+
+<head>
+    <title> Title alignement </title>
+    <style>
+        p {
+            text-align: center;
+        }
+    </style>
+</head>
 
 
 {% endblock content %}
